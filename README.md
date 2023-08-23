@@ -1,1 +1,1 @@
-# thunderbird-webext-types
+# mozilla-webext-types
