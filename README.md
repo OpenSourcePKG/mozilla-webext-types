@@ -1,10 +1,9 @@
 # mozilla-webext-types
-Types description of Firefox and Thunderbird WebExtension.
+Type definitions for the WebExtensions API used by Firefox and Thunderbird.
 
-
-Since we didn't find any types that were properly described and all projects do their own part. 
-We have now started this project for the stable version 115 Thunderbird. 
-If API parts are missing please just let us know.
+We started this project since we didn't find any proper type definitions and most plugin projects write their own.,
+For now, the focus lies on supporting version 115 of Thunderbird and Firefox ESR. 
+This is a work in progress so if any parts are missing, just let us know.
 
 # Documentation
 * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions
@@ -14,7 +13,7 @@ If API parts are missing please just let us know.
 # Install
 TODO
 
-# Used sample
+# Usage
 ```typescript
 declare const browser: TBrowser;
 
