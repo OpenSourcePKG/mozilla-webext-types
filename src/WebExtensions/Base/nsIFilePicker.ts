@@ -7,8 +7,10 @@ import {nsIFile} from './nsIFile';
  */
 export interface nsIFilePicker {
 
-    filterAll: 0x001;       // *.*
-    filterHTML: 0x002;      // *.html; *.htm
+    // *.*
+    filterAll: 0x001;
+    // *.html; *.htm
+    filterHTML: 0x002;
 
     readonly file: nsIFile;
 }

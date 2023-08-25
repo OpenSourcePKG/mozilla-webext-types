@@ -35,7 +35,7 @@ export interface nsIMsgFolder {
 
     /**
      * getFlag
-     * @param getFlag
+     * @param flagName
      */
     getFlag(flagName: nsMsgFolderFlags): boolean;
 

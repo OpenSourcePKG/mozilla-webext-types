@@ -1,6 +1,6 @@
 import {MessageHeader} from '../Messages/MessageHeader';
 import {Tab} from '../Tabs/Tab';
-import {TEvent} from "../TEvent";
+import {TEvent} from '../TEvent';
 
 /**
  * MessageDisplay

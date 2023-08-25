@@ -1,8 +1,6 @@
 /**
  * ComponentsUtils
  */
-import {ExtensionCommon} from '../ExtensionCommon';
-
 export type IteratorUtilsPath = 'resource:///modules/iteratorUtils.jsm';
 export type MailServicesPath = 'resource:///modules/MailServices.jsm';
 export type ExtensionCommonPath = 'resource://gre/modules/ExtensionCommon.jsm';

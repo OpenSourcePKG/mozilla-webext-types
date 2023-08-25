@@ -1,4 +1,4 @@
-import {ExtensionData} from './../ExtensionData';
+import {ExtensionData} from '../ExtensionData';
 import {FolderManager} from './FolderManager';
 import {MessageManager} from './MessageManager';
 
