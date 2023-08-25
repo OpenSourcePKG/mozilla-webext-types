@@ -2,6 +2,7 @@ import {ExtensionData} from '../ExtensionData';
 import {AddressBookManager} from './AddressBookManager';
 import {FolderManager} from './FolderManager';
 import {MessageManager} from './MessageManager';
+import {TabManager} from './TabManager';
 
 /**
  * ExtensionMail
@@ -25,7 +26,10 @@ export interface ExtensionMail extends ExtensionData {
      */
     messageManager: MessageManager;
 
-    tabManager: any;
+    /**
+     * tabManager
+     */
+    tabManager: TabManager;
 
     windowManager: any;
 }
