@@ -18,7 +18,7 @@ export interface Accounts {
     /**
      * list
      *
-     * @param includeFolders [Added in TB 91] Specifies whether the returned MailAccount objects should included their account’s folders. Defaults to true.
+     * @param {boolean} includeFolders - [Added in TB 91] Specifies whether the returned MailAccount objects should included their account’s folders. Defaults to true.
      * @return Returns all mail accounts. They will be returned in the same order as used in Thunderbird’s folder pane.
      */
     list(includeFolders?: boolean): Promise<MailAccount[]>;
@@ -26,9 +26,9 @@ export interface Accounts {
     /**
      * get
      *
-     * @param accountId
-     * @param includeFolders [Added in TB 91] Specifies whether the returned MailAccount object should included the account’s folders. Defaults to true.
-     * @return Returns details of the requested account, or null if it doesn’t exist.
+     * @param {string} accountId
+     * @param {boolean} [includeFolders] - [Added in TB 91] Specifies whether the returned MailAccount object should included the account’s folders. Defaults to true.
+     * @return {Promise<MailAccount|null>} Returns details of the requested account, or null if it doesn’t exist.
      */
     get(accountId: string, includeFolders?: boolean): Promise<MailAccount|null>;
 

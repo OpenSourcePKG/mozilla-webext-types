@@ -5,7 +5,6 @@ export interface AddressBookManager {
 
     /**
      * findAddressBookById
-     * @param id
      */
     findAddressBookById(id: string): any;
 

@@ -3,8 +3,6 @@ import {mozIDOMWindowProxy} from './mozIDOMWindowProxy';
 import {nsIFilePickerShownCallback} from './nsIFilePickerShownCallback';
 
 /**
- * nsIFilePicker
- *
  * @see https://searchfox.org/mozilla-central/source/widget/nsIFilePicker.idl
  */
 export interface nsIFilePicker {
@@ -31,11 +29,14 @@ export interface nsIFilePicker {
     filterHTML: 0x002;
     // *.txt
     filterText: 0x004;
-    // *.jpe; *.jpg; *.jpeg; *.gif;
-    // *.png; *.bmp; *.ico; *.svg;
-    // *.svgz; *.tif; *.tiff; *.ai;
-    // *.drw; *.pct; *.psp; *.xcf;
-    // *.psd; *.raw; *.webp
+
+    /*
+     * *.jpe; *.jpg; *.jpeg; *.gif;
+     * *.png; *.bmp; *.ico; *.svg;
+     * *.svgz; *.tif; *.tiff; *.ai;
+     * *.drw; *.pct; *.psp; *.xcf;
+     * *.psd; *.raw; *.webp
+     */
     filterImages: 0x008;
     // *.xml
     filterXML: 0x010;
@@ -45,28 +46,24 @@ export interface nsIFilePicker {
     filterApps: 0x040;
 
     /**
-     * init
-     * Initialize the file picker widget.  The file picker is not valid until this method is called.
-     *
-     * @param parent mozIDOMWindow parent. This dialog will be dependent on this parent. parent must be non-null.
-     * @param title The title for the file widget
-     * @param mode load, save, or get folder
+     * Initialize the file picker widget.
+     * The file picker is not valid until this method is called.
+     * @param {mozIDOMWindowProxy} parent - 'mozIDOMWindow' parent.
+     * This dialog will be dependent on this parent.
+     * Parent must be non-null.
+     * @param {string} title - The title for the file widget.
+     * @param {number} mode - 'load', 'save', or 'get' folder.
      */
     init(parent: mozIDOMWindowProxy, title: string, mode: number): void;
 
     /**
-     * file
-     * Get the nsIFile for the file or directory. A different file object
-     * may be returned by each invocation.
-     *
-     * @return Returns the file currently selected
+     * Get the nsIFile for the file or directory. A different file object may be returned by each invocation. Returns the file currently selected.
+     * @member {nsIFile}
      */
     readonly file: nsIFile;
 
     /**
-     * open
      * Opens the file dialog asynchrounously. The passed in object's done method will be called upon completion.
-     *
      * @param aFilePickerShownCallback
      */
     open(aFilePickerShownCallback: nsIFilePickerShownCallback): void;

@@ -5,7 +5,8 @@
 export interface nsIFile {
 
     /**
-     * path
+     * Is a path.
+     * @member {boolean}
      */
     readonly path: string;
 
@@ -15,11 +16,13 @@ export interface nsIFile {
     readonly exists: () => boolean;
 
     /**
-     * initWithPath
-     * This function will initialize the nsIFile object. Any internal state information will be reset.
+     * This function will initialize the nsIFile object.
+     * Any internal state information will be reset.
      *
-     * @param filePath A string which specifies a full file path to a location.  Relative paths will be treated as an
-     * error (NS_ERROR_FILE_UNRECOGNIZED_PATH). For initWithNativePath, the filePath must be in the native filesystem charset.
+     * @param {string} filePath - A string which specifies a full file path to a location.
+     * Relative paths will be treated as an
+     * error (NS_ERROR_FILE_UNRECOGNIZED_PATH).
+     * For initWithNativePath, the filePath must be in the native filesystem charset.
      */
     readonly initWithPath: (filePath: string) => void;
 }
