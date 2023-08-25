@@ -1,0 +1,4 @@
+/**
+ * mozIDOMWindowProxy
+ */
+export interface mozIDOMWindowProxy {}

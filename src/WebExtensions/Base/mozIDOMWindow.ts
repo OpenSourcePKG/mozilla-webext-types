@@ -1,0 +1,4 @@
+/**
+ * mozIDOMWindow
+ */
+export interface mozIDOMWindow {}

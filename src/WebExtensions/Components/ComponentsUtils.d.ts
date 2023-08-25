@@ -4,6 +4,7 @@
 export type IteratorUtilsPath = 'resource:///modules/iteratorUtils.jsm';
 export type MailServicesPath = 'resource:///modules/MailServices.jsm';
 export type ExtensionCommonPath = 'resource://gre/modules/ExtensionCommon.jsm';
+export type ServicesPath = 'resource://gre/modules/Services.jsm';
 
 /**
  * ComponentsUtils
@@ -27,6 +28,12 @@ export declare class ComponentsUtils {
      * @param path
      */
     public import(path: ExtensionCommonPath): any;
+
+    /**
+     * import
+     * @param path
+     */
+    public import(path: ServicesPath): any;
 
     /**
      * unload

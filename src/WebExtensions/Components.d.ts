@@ -1,3 +1,6 @@
+import {nsIEnvironment} from './Base/nsIEnvironment';
+import {nsIFilePicker} from './Base/nsIFilePicker';
+import {nsIPrefService} from './Base/nsIPrefService';
 import {nsIJSCID} from './Base/nsIJSCID';
 import {ComponentsInterfaces} from './Components/ComponentsInterfaces';
 import {ComponentsUtils} from './Components/ComponentsUtils';
@@ -12,7 +15,21 @@ export declare interface Components {
     /**
      * classes
      */
-    classes: {readonly [key: string]: nsIJSCID; };
+    classes: {
+        readonly [key: string]: nsIJSCID|object;
+
+        '@mozilla.org/process/environment;1': {
+            getService(service: nsIEnvironment): nsIEnvironment;
+        };
+
+        '@mozilla.org/filepicker;1': {
+            createInstance(instance: nsIFilePicker): nsIFilePicker;
+        };
+
+        '@mozilla.org/preferences-service;1': {
+            getService(service: nsIPrefService): nsIPrefService;
+        }
+    };
 
     /**
      * interfaces
