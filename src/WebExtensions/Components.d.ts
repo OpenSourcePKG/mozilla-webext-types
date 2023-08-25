@@ -1,3 +1,4 @@
+import {nsIJSCID} from './Base/nsIJSCID';
 import {ComponentsInterfaces} from './Components/ComponentsInterfaces';
 import {ComponentsUtils} from './Components/ComponentsUtils';
 
@@ -20,8 +21,9 @@ export declare interface Components {
 
     /**
      * results
+     * TODO
      */
-    results: ComponentsResults;
+    // results: ComponentsResults;
 
     /**
      * utils

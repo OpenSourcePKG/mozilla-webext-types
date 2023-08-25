@@ -1,4 +1,5 @@
 import {ExtensionData} from '../ExtensionData';
+import {AddressBookManager} from './AddressBookManager';
 import {FolderManager} from './FolderManager';
 import {MessageManager} from './MessageManager';
 
@@ -14,7 +15,10 @@ export interface ExtensionMail extends ExtensionData {
      */
     folderManager: FolderManager;
 
-    addressBookManager: any;
+    /**
+     * addressBookManager
+     */
+    addressBookManager: AddressBookManager;
 
     /**
      * messageManager
