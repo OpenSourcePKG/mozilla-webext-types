@@ -1,6 +1,4 @@
 /**
- * Port
- *
  * A Port object represents one end of a connection between two specific contexts, which can be used to exchange messages.
  *
  * One side initiates the connection, using a connect() API. This returns a Port object. The other side listens for
@@ -18,31 +16,30 @@
  * - between your extension and a different extension
  *
  * You need to use different connection APIs for different sorts of connections, as detailed in the table below.
- *
  * @see https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/Port
  */
 export interface Port {
 
     /**
-     * name
      * The port's name, defined in the runtime.connect() or tabs.connect() call that created it.
      * If this port is connected to a native application, its name is the name of the native application.
+     * @member {string}
      */
     name: string;
 
     /**
-     * disconnect
      * Disconnects a port. Either end can call this when they have finished with the port.
      * It will cause onDisconnect to be fired at the other end. This is useful if the other end is maintaining some
      * state relating to this port, which can be cleaned up on disconnect. If this port is connected to a native
      * application, this function will close the native application.
+     * @member {Function}
      */
     disconnect: () => void;
 
     /**
-     * error
      * If the port was disconnected due to an error, this will be set to an object with a string property message,
      * giving you more information about the error. See onDisconnect.
+     * @member {Error}
      */
     error: Error;
 }

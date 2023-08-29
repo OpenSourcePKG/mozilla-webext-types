@@ -80,20 +80,12 @@ export interface MessageDisplay {
         }): Promise<Tab>;
 
     /**
-     * onMessageDisplayed
      * Fired when a message is displayed, whether in a 3-pane tab, a message tab, or a message window.
+     * @param {Tab} tab - Changes in TB 76: previously just the tab’s ID
+     * @param {MessageHeader} message - Message
      */
     onMessageDisplayed: TEvent<(
-
-        /**
-         * tab
-         * Changes in TB 76: previously just the tab’s ID
-         */
         tab: Tab,
-
-        /**
-         * message
-         */
         message: MessageHeader
     ) => void>;
 

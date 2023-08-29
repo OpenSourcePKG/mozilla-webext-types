@@ -1,3 +1,5 @@
+import {Services} from '../Services';
+
 /**
  * ComponentsUtils
  */
@@ -33,7 +35,7 @@ export declare class ComponentsUtils {
      * import
      * @param path
      */
-    public import(path: ServicesPath): any;
+    public import(path: ServicesPath): Services;
 
     /**
      * unload
