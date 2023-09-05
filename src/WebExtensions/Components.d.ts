@@ -3,6 +3,7 @@ import {nsIFilePicker} from './Base/nsIFilePicker';
 import {nsIPrefService} from './Base/nsIPrefService';
 import {nsIJSCID} from './Base/nsIJSCID';
 import {ComponentsInterfaces} from './Components/ComponentsInterfaces';
+import {ComponentsResults} from './Components/ComponentsResults';
 import {ComponentsUtils} from './Components/ComponentsUtils';
 
 /**
@@ -28,22 +29,21 @@ export declare interface Components {
 
         '@mozilla.org/preferences-service;1': {
             getService(service: nsIPrefService): nsIPrefService;
-        }
+        };
     };
 
     /**
-     * interfaces
+     * @member {ComponentsInterfaces}
      */
     interfaces: ComponentsInterfaces;
 
     /**
-     * results
-     * TODO
+     * @member {ComponentsResults}
      */
-    // results: ComponentsResults;
+    results: ComponentsResults;
 
     /**
-     * utils
+     * @member {ComponentsUtils}
      */
     utils: ComponentsUtils;
 }

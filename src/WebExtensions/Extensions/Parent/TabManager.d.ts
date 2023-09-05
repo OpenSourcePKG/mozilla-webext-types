@@ -11,9 +11,9 @@ export interface TabManager {
      * Returns a Tab wrapper for the tab with the given ID.
      * @param {number} tabId - The ID of the tab for which to return a wrapper.
      * @param {any} _default - The value to return if no tab exists with the given ID.
-     * @returns {Tab|any} The wrapped tab, or the default value.
+     * @returns {Tab} The wrapped tab, or the default value.
      */
-    get<T>(tabId: number, _default?: T): Tab|T;
+    get<T>(tabId: number, _default?: T): Tab;
 
     /**
      * If the extension has requested activeTab permission, grant it those permissions for the current.

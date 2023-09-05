@@ -12,13 +12,13 @@ export interface ESExtensionHook {
 
     /**
      * The callback function to run when window loads the matching document.
-     * @param {} win - receive the matching window object
+     * @param {} win - Receive the matching window object.
      */
     onLoadWindow(win: any): void;
 
     /**
      * The callback function to run when window unloads the matching document.
-     * @param {} win - receive the matching window object
+     * @param {} win - Receive the matching window object.
      */
     onUnloadWindow(win: any): void;
 }

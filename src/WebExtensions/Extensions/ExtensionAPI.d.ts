@@ -2,42 +2,36 @@ import {BaseContext} from './BaseContext';
 import {ExtensionData} from './ExtensionData';
 
 /**
- * ExtensionAPI
- * Base class for WebExtension APIs.  Each API creates a new class
- * that inherits from this class, the derived class is instantiated
- * once for each extension that uses the API.
- *
  * @see https://searchfox.org/comm-central/source/mozilla/toolkit/components/extensions/ExtensionCommon.sys.mjs#347
  */
-export abstract class ExtensionAPI {
+export declare class ExtensionAPI<T extends ExtensionData> {
 
     /**
-     * extension
+     * @member {ExtensionData}
      */
-    public extension: ExtensionData;
+    public extension: T;
 
     /**
-     * constructor
-     * @param extension
+     * @param {ExtensionData} ext
      */
-    public constructor(extension: ExtensionData);
+    public constructor(ext: T);
 
     /**
-     * destroy
+     */
+    public onStartup(): void;
+
+    /**
      */
     public destroy(): void;
 
     /**
-     * onManifestEntry
-     * @param entry
+     * @param {any} entry
      */
     public onManifestEntry(entry: any): void;
 
     /**
-     * getAPI
-     * for Thunderbird use
-     * @param context
+     * @param {BaseContext<ExtensionData>} context@
+     * @returns {Record<string, unknown>}
      */
-    public abstract getAPI(context: BaseContext<ExtensionData>): Record<string, unknown>;
-
+    public getAPI(context: BaseContext<T>): Record<string, unknown>;
 }

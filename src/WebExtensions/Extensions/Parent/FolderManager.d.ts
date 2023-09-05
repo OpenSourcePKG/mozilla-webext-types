@@ -26,5 +26,5 @@ export interface FolderManager {
      * @param accountId
      * @param path
      */
-    get(accountId: string, path): nsIMsgFolder;
+    get(accountId: string, path: string): nsIMsgFolder;
 }
