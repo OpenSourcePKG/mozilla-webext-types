@@ -2,9 +2,6 @@ import {ExtensionParent} from '../Extensions/ExtensionParent';
 import {ExtensionSupport} from '../Extensions/ExtensionSupport';
 import {Services} from '../Services';
 
-/**
- * ComponentsUtils
- */
 export type IteratorUtilsPath = 'resource:///modules/iteratorUtils.jsm';
 export type MailServicesPath = 'resource:///modules/MailServices.jsm';
 export type ExtensionCommonPath = 'resource://gre/modules/ExtensionCommon.jsm';
@@ -30,8 +27,7 @@ export declare class ComponentsUtils {
     // public import(path: MailServicesPath): MailServicesExport;
 
     /**
-     * import
-     * @param path
+     * @param {ExtensionCommonPath} path
      */
     public import(path: ExtensionCommonPath): any;
 

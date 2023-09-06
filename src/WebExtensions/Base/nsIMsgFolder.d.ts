@@ -1,47 +1,47 @@
 import {nsIMsgDBHdr} from './nsIMsgDBHdr';
 import {nsIMsgIncomingServer} from './nsIMsgIncomingServer';
 import {nsISimpleEnumerator} from './nsISimpleEnumerator';
+import {nsISupports} from './nsISupports';
 import {nsMsgFolderFlags} from './nsMsgFolderFlags';
 
 /**
- * nsIMsgFolder
+ * The contract ID for this component is @mozilla.org/msgFolder/msgFolderService;1.
+ * @see https://searchfox.org/comm-central/source/mailnews/base/public/nsIMsgFolder.idl
  */
-export interface nsIMsgFolder {
+export interface nsIMsgFolder extends nsISupports {
 
     /**
-     * name
+     * @member {string} name
      */
     name: string;
 
     /**
-     * server
+     * @member {nsIMsgIncomingServer} server
      */
     readonly server: nsIMsgIncomingServer;
 
     /**
-     * URI
+     * @member {string} URI
      */
     readonly URI: string;
 
     /**
-     * booelan
+     * @member {boolean} hasSubFolders
      */
     readonly hasSubFolders: boolean;
 
     /**
-     * subFolders
+     * @member {nsISimpleEnumerator} subFolders
      */
     readonly subFolders: nsISimpleEnumerator<nsIMsgFolder>;
 
     /**
-     * getFlag
-     * @param flagName
+     * @param {nsMsgFolderFlags} flagName
      */
     getFlag(flagName: nsMsgFolderFlags): boolean;
 
     /**
-     * getUriForMsg
-     * @param msgHdr
+     * @param {nsIMsgDBHdr} msgHdr
      */
     getUriForMsg(msgHdr: nsIMsgDBHdr): string;
 }

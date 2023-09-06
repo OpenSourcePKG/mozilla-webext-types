@@ -2,9 +2,7 @@
   "name": "mozilla-webext-types",
   "version": "1.0.0",
   "description": "Types description of Firefox and Thunderbird WebExtension.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OpenSourcePKG/mozilla-webext-types.git"

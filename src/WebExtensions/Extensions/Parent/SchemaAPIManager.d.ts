@@ -1,3 +1,6 @@
+import {MessageHeader} from '../../../Thunderbird/Messages/MessageHeader';
+import {Tab} from './Tab';
+
 /**
  * @see https://searchfox.org/comm-central/source/mozilla/toolkit/components/extensions/ExtensionCommon.sys.mjs#1442
  */
@@ -30,5 +33,6 @@ export interface SchemaAPIManager {
         extensions: SchemaAPIManager;
         global: any;
         ExtensionUtils: any;
-    } | any;
+        getDisplayedMessages(tab: Tab): MessageHeader[];
+    };
 }

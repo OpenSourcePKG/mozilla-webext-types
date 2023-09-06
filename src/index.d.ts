@@ -1,6 +1,8 @@
 /**
- * Firefox
+ * Firefox objects.
  */
+import exp = require('constants');
+
 export {Port} from './Firefox/Runtime/Port';
 export {RunAt} from './Firefox/ExtensionTypes/RunAt';
 export {InjectDetails} from './Firefox/ExtensionTypes/InjectDetails';
@@ -9,7 +11,7 @@ export {I18n} from './Firefox/I18n/I18n';
 export {Browser as FirefoxBrowser} from './Firefox/Browser';
 
 /**
- * Thunderbird
+ * Thunderbird objects.
  */
 export {TEvent} from './Thunderbird/TEvent';
 export {NodeType} from './Thunderbird/NodeType';
@@ -40,16 +42,19 @@ export {WindowType} from './Thunderbird/Tabs/WindowType';
 export {Browser as ThunderbirdBrowser} from './Thunderbird/Browser';
 
 /**
- * WebExtensions
+ * WebExtensions objects.
  */
 export {nsIURI} from './WebExtensions/Base/nsIURI';
 export {nsIMsgDBHdr} from './WebExtensions/Base/nsIMsgDBHdr';
 export {nsIMsgFolder} from './WebExtensions/Base/nsIMsgFolder';
 export {nsIMsgIncomingServer} from './WebExtensions/Base/nsIMsgIncomingServer';
 export {nsIFilePickerShownCallback} from './WebExtensions/Base/nsIFilePickerShownCallback';
+export {nsIMessenger} from './WebExtensions/Base/nsIMessenger';
+export {nsIMsgMessageService} from './WebExtensions/Base/nsIMsgMessageService';
+export {nsIStreamListener} from './WebExtensions/Base/nsIStreamListener';
 export {ExtensionData} from './WebExtensions/Extensions/ExtensionData';
 export {BaseContext} from './WebExtensions/Extensions/BaseContext';
-export {ExtensionAPI} from './WebExtensions/Extensions/ExtensionAPI';
+export {IExtensionAPI} from './WebExtensions/Extensions/IExtensionAPI';
 export {FolderManager} from './WebExtensions/Extensions/Parent/FolderManager';
 export {MessageManager} from './WebExtensions/Extensions/Parent/MessageManager';
 export {ExtensionMail} from './WebExtensions/Extensions/Parent/ExtensionMail';
@@ -58,3 +63,4 @@ export {Tab} from './WebExtensions/Extensions/Parent/Tab';
 export {ExtensionCommon} from './WebExtensions/ExtensionCommon';
 export {Components} from './WebExtensions/Components';
 export {Services} from './WebExtensions/Services';
+export {MailServices} from './WebExtensions/MailServices';

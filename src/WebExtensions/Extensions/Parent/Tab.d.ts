@@ -21,4 +21,5 @@ export class Tab extends TabBase {
      * Browser from thunderbird
      */
     public browser?: Browser;
+
 }
