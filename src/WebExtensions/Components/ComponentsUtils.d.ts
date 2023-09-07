@@ -1,5 +1,6 @@
 import {ExtensionParent} from '../Extensions/ExtensionParent';
 import {ExtensionSupport} from '../Extensions/ExtensionSupport';
+import {MailServices} from '../MailServices';
 import {Services} from '../Services';
 
 export type IteratorUtilsPath = 'resource:///modules/iteratorUtils.jsm';
@@ -10,21 +11,19 @@ export type ExtensionParentPath = 'resource://gre/modules/ExtensionParent.jsm';
 export type ServicesPath = 'resource://gre/modules/Services.jsm';
 
 /**
- * ComponentsUtils
  */
 export declare class ComponentsUtils {
 
     /**
-     * import
      * @param path
      */
     // public import(path: IteratorUtilsPath): IteratorUtils;
 
     /**
-     * import
-     * @param path
+     * @param {MailServicesPath} path
+     * @returns {MailServices}
      */
-    // public import(path: MailServicesPath): MailServicesExport;
+    public import(path: MailServicesPath): MailServices;
 
     /**
      * @param {ExtensionCommonPath} path
@@ -33,16 +32,19 @@ export declare class ComponentsUtils {
 
     /**
      * @param {ServicesPath} path
+     * @returns {Services}
      */
     public import(path: ServicesPath): Services;
 
     /**
      * @param {ExtensionSupportPath} path
+     * @returns {ExtensionSupport}
      */
     public import(path: ExtensionSupportPath): ExtensionSupport;
 
     /**
      * @param {ExtensionParentPath} path
+     * @returns {ExtensionParent}
      */
     public import(path: ExtensionParentPath): ExtensionParent;
 

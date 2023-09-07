@@ -44,6 +44,7 @@ export {Browser as ThunderbirdBrowser} from './Thunderbird/Browser';
 /**
  * WebExtensions objects.
  */
+export {Interfaces} from './WebExtensions/Base/Interfaces';
 export {nsIURI} from './WebExtensions/Base/nsIURI';
 export {nsIMsgDBHdr} from './WebExtensions/Base/nsIMsgDBHdr';
 export {nsIMsgFolder} from './WebExtensions/Base/nsIMsgFolder';
@@ -52,6 +53,9 @@ export {nsIFilePickerShownCallback} from './WebExtensions/Base/nsIFilePickerShow
 export {nsIMessenger} from './WebExtensions/Base/nsIMessenger';
 export {nsIMsgMessageService} from './WebExtensions/Base/nsIMsgMessageService';
 export {nsIStreamListener} from './WebExtensions/Base/nsIStreamListener';
+export {nsIInputStream} from './WebExtensions/Base/nsIInputStream';
+export {nsIRequest} from './WebExtensions/Base/nsIRequest';
+export {nsresult} from './WebExtensions/Base/nsresult';
 export {ExtensionData} from './WebExtensions/Extensions/ExtensionData';
 export {BaseContext} from './WebExtensions/Extensions/BaseContext';
 export {IExtensionAPI} from './WebExtensions/Extensions/IExtensionAPI';

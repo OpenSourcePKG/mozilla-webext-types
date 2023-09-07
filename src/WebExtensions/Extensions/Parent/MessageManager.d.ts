@@ -10,24 +10,21 @@ import {ExtensionData} from '../ExtensionData';
 export interface MessageManager {
 
     /**
-     * extension
+     * @member {ExtensionData}
      */
     extension: ExtensionData;
 
     /**
-     * convert
-     * @param msgHdr
+     * @param {nsIMsgDBHdr} msgHdr
      */
     convert(msgHdr: nsIMsgDBHdr): MessageHeader;
 
     /**
-     * get
-     * @param id
+     * @param {number} id
      */
-    get(id: string): nsIMsgDBHdr|null;
+    get(id: number): nsIMsgDBHdr|null;
 
     /**
-     * startMessageList
      * @param messageList
      */
     startMessageList(messageList: any[]): any;

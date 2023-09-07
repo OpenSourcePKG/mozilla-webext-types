@@ -2,37 +2,43 @@ import {Accounts} from './Accounts/Accounts';
 import {AddressBooks} from './AddressBooks/AddressBooks';
 import {ComposeScripts} from './ComposeScripts/ComposeScripts';
 import {MessageDisplay} from './MessageDisplay/MessageDisplay';
+import {MessageDisplayAction} from './MessageDisplayAction/MessageDisplayAction';
 import {Tabs} from './Tabs/Tabs';
 import {Browser as Super} from '../Firefox/Browser';
 
 /**
- * Browser
- * https://github.com/thundernest/developer-docs/blob/master/add-ons/mailextensions/supported-webextension-api.md
+ * Browser for Thunderbird.
+ * @see https://github.com/thundernest/developer-docs/blob/master/add-ons/mailextensions/supported-webextension-api.md
  */
 export interface Browser extends Super {
 
     /**
-     * accounts
+     * @member {Accounts}
      */
     accounts: Accounts;
 
     /**
-     * addressBooks
+     * @member {AddressBooks}
      */
     addressBooks: AddressBooks;
 
     /**
-     * composeScripts
+     * @member {ComposeScripts}
      */
     composeScripts: ComposeScripts;
 
     /**
-     * messageDisplay
+     * @member {MessageDisplay}
      */
     messageDisplay: MessageDisplay;
 
     /**
-     * tabs
+     * @member {MessageDisplayAction}
+     */
+    messageDisplayAction: MessageDisplayAction;
+
+    /**
+     * @member {Tabs}
      */
     tabs: Tabs;
 }

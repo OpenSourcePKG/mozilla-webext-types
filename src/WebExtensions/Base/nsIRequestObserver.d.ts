@@ -1,3 +1,4 @@
+import {nsIRequest} from './nsIRequest';
 import {nsISupports} from './nsISupports';
 import {nsresult} from './nsresult';
 

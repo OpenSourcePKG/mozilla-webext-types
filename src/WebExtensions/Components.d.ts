@@ -1,7 +1,9 @@
 import {nsIEnvironment} from './Base/nsIEnvironment';
 import {nsIFilePicker} from './Base/nsIFilePicker';
+import {nsIMessenger} from './Base/nsIMessenger';
 import {nsIPrefService} from './Base/nsIPrefService';
 import {nsIJSCID} from './Base/nsIJSCID';
+import {nsIScriptableInputStream} from './Base/nsIScriptableInputStream';
 import {ComponentsInterfaces} from './Components/ComponentsInterfaces';
 import {ComponentsResults} from './Components/ComponentsResults';
 import {ComponentsUtils} from './Components/ComponentsUtils';
@@ -29,6 +31,14 @@ export declare interface Components {
 
         '@mozilla.org/preferences-service;1': {
             getService(service: nsIPrefService): nsIPrefService;
+        };
+
+        '@mozilla.org/scriptableinputstream;1': {
+            createInstance(instance: nsIScriptableInputStream): nsIScriptableInputStream;
+        };
+
+        '"@mozilla.org/messenger;1"': {
+            createInstance(instance: nsIMessenger): nsIMessenger;
         };
     };
 

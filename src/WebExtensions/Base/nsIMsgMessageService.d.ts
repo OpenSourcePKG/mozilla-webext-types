@@ -31,10 +31,10 @@ export declare interface nsIMsgMessageService extends nsISupports {
     streamMessage(
         aMessageURI: string,
         aConsumer: nsISupports,
-        aMsgWindow: nsIMsgWindow,
-        aUrlListener: nsIUrlListener,
+        aMsgWindow: nsIMsgWindow|null,
+        aUrlListener: nsIUrlListener|null,
         aConvertData: boolean,
-        aAdditionalHeader: string,
+        aAdditionalHeader: string|null,
         aLocalOnly?: boolean
     ): nsIURI;
 

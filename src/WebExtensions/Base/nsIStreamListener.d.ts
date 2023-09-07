@@ -1,3 +1,5 @@
+import {nsIInputStream} from './nsIInputStream';
+import {nsIRequest} from './nsIRequest';
 import {nsIRequestObserver} from './nsIRequestObserver';
 
 /**

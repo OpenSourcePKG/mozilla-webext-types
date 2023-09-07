@@ -1,4 +1,4 @@
-import {Interfaces} from './Base/Interfaces';
+import {nsIMsgMessageService} from './Base/nsIMsgMessageService';
 
 /**
  * @see https://searchfox.org/comm-central/source/mailnews/base/src/MailServices.jsm
@@ -11,5 +11,5 @@ export declare interface MailServices {
      * @param {string} uri - The URI of a folder or message.
      * @returns {nsIMsgMessageService}
      */
-    messageServiceFromURI<I extends Interfaces[keyof Interfaces]>(uri: string): I;
+    messageServiceFromURI(uri: string): nsIMsgMessageService;
 }
