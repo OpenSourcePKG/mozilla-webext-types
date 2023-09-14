@@ -1,8 +1,6 @@
 /**
  * Firefox objects.
  */
-import exp = require('constants');
-
 export {Port} from './Firefox/Runtime/Port';
 export {RunAt} from './Firefox/ExtensionTypes/RunAt';
 export {InjectDetails} from './Firefox/ExtensionTypes/InjectDetails';
@@ -33,7 +31,6 @@ export {MailIdentity} from './Thunderbird/Identities/MailIdentity';
 export {MailingListNode} from './Thunderbird/MailingLists/MailingListNode';
 export {MessageHeader} from './Thunderbird/Messages/MessageHeader';
 export {Tabs} from './Thunderbird/Tabs/Tabs';
-//export {Tab} from './Thunderbird/Tabs/Tab';
 export {TabStatus} from './Thunderbird/Tabs/TabStatus';
 export {TabsUpdateEvent} from './Thunderbird/Tabs/TabsUpdateEvent';
 export {UpdateFilter} from './Thunderbird/Tabs/UpdateFilter';
@@ -46,6 +43,7 @@ export {Browser as ThunderbirdBrowser} from './Thunderbird/Browser';
  */
 export {Interfaces} from './WebExtensions/Base/Interfaces';
 export {nsIURI} from './WebExtensions/Base/nsIURI';
+export {nsIJSRAIIHelper} from './WebExtensions/Base/nsIJSRAIIHelper';
 export {nsIMsgDBHdr} from './WebExtensions/Base/nsIMsgDBHdr';
 export {nsIMsgFolder} from './WebExtensions/Base/nsIMsgFolder';
 export {nsIMsgIncomingServer} from './WebExtensions/Base/nsIMsgIncomingServer';
@@ -56,6 +54,7 @@ export {nsIStreamListener} from './WebExtensions/Base/nsIStreamListener';
 export {nsIInputStream} from './WebExtensions/Base/nsIInputStream';
 export {nsIRequest} from './WebExtensions/Base/nsIRequest';
 export {nsresult} from './WebExtensions/Base/nsresult';
+export {amIAddonManagerStartup} from './WebExtensions/Extensions/amIAddonManagerStartup';
 export {ExtensionData} from './WebExtensions/Extensions/ExtensionData';
 export {BaseContext} from './WebExtensions/Extensions/BaseContext';
 export {IExtensionAPI} from './WebExtensions/Extensions/IExtensionAPI';
@@ -64,6 +63,7 @@ export {MessageManager} from './WebExtensions/Extensions/Parent/MessageManager';
 export {ExtensionMail} from './WebExtensions/Extensions/Parent/ExtensionMail';
 export {TabManager} from './WebExtensions/Extensions/Parent/TabManager';
 export {Tab} from './WebExtensions/Extensions/Parent/Tab';
+export {TabmailTab} from './WebExtensions/Extensions/Parent/TabmailTab';
 export {ExtensionCommon} from './WebExtensions/ExtensionCommon';
 export {Components} from './WebExtensions/Components';
 export {Services} from './WebExtensions/Services';

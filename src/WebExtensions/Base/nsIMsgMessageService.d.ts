@@ -1,3 +1,4 @@
+import {nsIFile} from './nsIFile';
 import {nsIMsgDBHdr} from './nsIMsgDBHdr';
 import {nsIMsgWindow} from './nsIMsgWindow';
 import {nsISupports} from './nsISupports';
@@ -11,6 +12,29 @@ import {nsIUrlListener} from './nsIUrlListener';
  * @see https://searchfox.org/comm-central/source/mailnews/base/public/nsIMsgMessageService.idl
  */
 export declare interface nsIMsgMessageService extends nsISupports {
+
+    /**
+     * When you want to spool a message out to a file on disk.
+     * This is an asynch operation of course. You must pass in a
+     * url listener in order to figure out when the operation is done.
+     * @param {string} aMessageURI - The uri representing the message to spool out to disk.
+     * @param {nsIFile} aFile - The file you want the message saved to.
+     * @param {boolean} aGenerateDummyEnvelope - Usually FALSE. Set to TRUE if you want the msg appended at the end of the file.
+     * @param {nsIUrlListener} aUrlListener
+     * @param {nsIURI} aURL
+     * @param {boolean} canonicalLineEnding
+     * @param {nsIMsgWindow} aMsgWindow
+     * @constructor
+     */
+    SaveMessageToDisk(
+        aMessageURI: string,
+        aFile: nsIFile,
+        aGenerateDummyEnvelope: boolean,
+        aUrlListener: nsIUrlListener,
+        aURL: nsIURI,
+        canonicalLineEnding: boolean,
+        aMsgWindow: nsIMsgWindow
+    ): Promise<void>;
 
     /**
      * This method streams a message to the passed in consumer.

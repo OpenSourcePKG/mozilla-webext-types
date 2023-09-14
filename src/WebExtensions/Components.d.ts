@@ -37,9 +37,13 @@ export declare interface Components {
             createInstance(instance: nsIScriptableInputStream): nsIScriptableInputStream;
         };
 
-        '"@mozilla.org/messenger;1"': {
+        '@mozilla.org/messenger;1': {
             createInstance(instance: nsIMessenger): nsIMessenger;
         };
+
+        '@mozilla.org/addons/addon-manager-startup;1': {
+            getService(service: amIAddonManagerStartup): amIAddonManagerStartup;
+        }
     };
 
     /**

@@ -12,5 +12,5 @@ export interface nsIWindowMediator {
      * If null, return the topmost window of any type.
      * @returns {mozIDOMWindowProxy} The topmost window.
      */
-    getMostRecentWindow(aWindowType: string): mozIDOMWindowProxy;
+    getMostRecentWindow(aWindowType: string|null): mozIDOMWindowProxy;
 }

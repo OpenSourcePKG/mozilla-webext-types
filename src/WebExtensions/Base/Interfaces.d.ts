@@ -1,3 +1,4 @@
+import {amIAddonManagerStartup} from '../Extensions/amIAddonManagerStartup';
 import {nsIFile} from './nsIFile';
 import {nsIFilePicker} from './nsIFilePicker';
 import {nsIMessenger} from './nsIMessenger';
@@ -10,6 +11,7 @@ import {nsMsgFolderFlags} from './nsMsgFolderFlags';
 
 export type Interfaces = {
 
+    amIAddonManagerStartup: amIAddonManagerStartup;
     nsISupports: nsISupports;
     nsIFile: nsIFile;
     nsIFilePicker: nsIFilePicker;

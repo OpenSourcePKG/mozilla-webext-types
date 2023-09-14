@@ -2,18 +2,29 @@ import {nsIMsgFolder} from './nsIMsgFolder';
 
 /**
  * nsIMsgDBHdr
+ * @see https://searchfox.org/comm-central/source/mailnews/base/public/nsIMsgHdr.idl
  */
 export interface nsIMsgDBHdr {
 
     /**
-     * folder
+     * @member {number}
+     */
+    flags: number;
+
+    /**
+     * @member {nsIMsgFolder}
      */
     readonly folder: nsIMsgFolder;
 
     /**
-     * mime2DecodedAuthor
+     * @member {string}
      */
     readonly mime2DecodedAuthor: string;
+
+    /**
+     * @member {string}
+     */
+    readonly mime2DecodedSubject: string;
 
     /**
      * getStringProperty
