@@ -5,6 +5,7 @@ import {MessageDisplay} from './MessageDisplay/MessageDisplay';
 import {MessageDisplayAction} from './MessageDisplayAction/MessageDisplayAction';
 import {Tabs} from './Tabs/Tabs';
 import {Browser as Super} from '../Firefox/Browser';
+import {Windows} from './Windows/Windows';
 
 /**
  * Browser for Thunderbird.
@@ -41,4 +42,9 @@ export interface Browser extends Super {
      * @member {Tabs}
      */
     tabs: Tabs;
+
+    /**
+     * @member {Windows}
+     */
+    windows: Windows;
 }

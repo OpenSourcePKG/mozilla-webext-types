@@ -7,6 +7,7 @@ import {nsIScriptableInputStream} from './Base/nsIScriptableInputStream';
 import {ComponentsInterfaces} from './Components/ComponentsInterfaces';
 import {ComponentsResults} from './Components/ComponentsResults';
 import {ComponentsUtils} from './Components/ComponentsUtils';
+import {amIAddonManagerStartup} from './Extensions/amIAddonManagerStartup';
 
 /**
  * Components
@@ -43,7 +44,7 @@ export declare interface Components {
 
         '@mozilla.org/addons/addon-manager-startup;1': {
             getService(service: amIAddonManagerStartup): amIAddonManagerStartup;
-        }
+        };
     };
 
     /**
