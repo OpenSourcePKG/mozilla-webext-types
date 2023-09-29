@@ -1,3 +1,4 @@
+import {TEvent} from '../TEvent';
 import {CreateData} from './CreateData';
 import {GetInfo} from './GetInfo';
 import {UpdateInfo} from './UpdateInfo';
@@ -70,4 +71,28 @@ export interface Windows {
      * @param {string} url
      */
     openDefaultBrowser(url: string): void;
+
+    /**
+     * Fired when a window is created.
+     */
+    onCreated: TEvent<(
+        window: Window
+    ) => void>;
+
+    /**
+     * Fired when a window is removed (closed).
+     */
+    onRemoved: TEvent<(
+        windowId: number
+    ) => void>;
+
+    /**
+     * Fired when the currently focused window changes. Will be WINDOW_ID_NONE, if all windows have
+     * lost focus. Note: On some Linux window managers, WINDOW_ID_NONE will always be sent immediately
+     * preceding a switch from one window to another.
+     */
+    onFocusChanged: TEvent<(
+        windowId: number
+    ) => void>;
+
 }

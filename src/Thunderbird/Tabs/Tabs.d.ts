@@ -7,10 +7,9 @@ import {TabsUpdateEvent} from './TabsUpdateEvent';
 import {WindowType} from './WindowType';
 
 /**
- * tabs
  * The tabs API supports creating, modifying and interacting with tabs in Thunderbird windows.
  *
- * Permissions
+ * Permissions:
  * 'activeTab'
  * 'tabs' Access browser tabs
  * 'tabHide' Hide and show browser tabs

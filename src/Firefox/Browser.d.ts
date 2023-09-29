@@ -1,4 +1,5 @@
 import {I18n} from './I18n/I18n';
+import {Runtime} from './Runtime/Runtime';
 import {Storage} from './Storage/Storage';
 
 /**
@@ -14,6 +15,15 @@ export interface Browser {
     i18n: I18n;
 
     /**
+     * This module provides information about the extension and the environment it’s running in. It also provides
+     * messaging APIs to communicate between different parts of the extension, communicate with other extensions and
+     * communicate with native applications.
+     * @member {Runtime}
+     */
+    runtime: Runtime;
+
+    /**
+     * Enables extensions to store and retrieve data, and listen for changes to stored items.
      * @member {Storage}
      */
     storage: Storage;
