@@ -1,3 +1,5 @@
+import {TEvent} from '../../Thunderbird/TEvent';
+import {MessageSender} from './MessageSender';
 import {RuntimeSendMessageOptions} from './RuntimeSendMessageOptions';
 
 /**
@@ -9,6 +11,7 @@ import {RuntimeSendMessageOptions} from './RuntimeSendMessageOptions';
  * Choosing between one-off messages and connection-based messaging.
  * - Communicate with other extensions.
  * - Communicate with native applications.
+ * @see https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime
  */
 export interface Runtime {
 
@@ -36,4 +39,30 @@ export interface Runtime {
      * @param {RuntimeSendMessageOptions} options
      */
     sendMessage(extensionId: string, message: any, options?: RuntimeSendMessageOptions): Promise<any>;
+
+    /**
+     * Use this event to listen for messages from another part of your extension.
+     * Some example use cases are.:
+     * in a content script, to listen for messages from a background script.
+     * in a background script, to listen for messages from a content script.
+     * in an option page or popup script, to listen for messages from a background script.
+     * in a background script, to listen for messages from an option page or popup script.
+     * To send a message that is received by the onMessage() listener, use runtime.sendMessage() or
+     * (to send a message to a content script) tabs.sendMessage().
+     */
+    onMessage: TEvent<(
+
+        /**
+         * The message itself. This is a serializable object (see Data cloning algorithm).
+         * @member {object}
+         */
+        message: object,
+
+        /**
+         * A runtime.MessageSender object representing the sender of the message.
+         * @member {MessageSender}
+         */
+        sender: MessageSender
+
+    ) => void>;
 }

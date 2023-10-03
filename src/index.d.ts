@@ -2,6 +2,7 @@
  * Firefox objects.
  */
 export {Port} from './Firefox/Runtime/Port';
+export {MessageSender} from './Firefox/Runtime/MessageSender';
 export {RuntimeSendMessageOptions} from './Firefox/Runtime/RuntimeSendMessageOptions';
 export {Runtime} from './Firefox/Runtime/Runtime';
 export {RunAt} from './Firefox/ExtensionTypes/RunAt';
