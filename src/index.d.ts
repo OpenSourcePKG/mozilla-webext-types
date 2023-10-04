@@ -39,6 +39,8 @@ export {TabsUpdateEvent} from './Thunderbird/Tabs/TabsUpdateEvent';
 export {UpdateFilter} from './Thunderbird/Tabs/UpdateFilter';
 export {UpdatePropertyName} from './Thunderbird/Tabs/UpdatePropertyName';
 export {WindowType} from './Thunderbird/Tabs/WindowType';
+export {Window} from './Thunderbird/Windows/Window';
+export {CreateData} from './Thunderbird/Windows/CreateData';
 export {Browser as ThunderbirdBrowser} from './Thunderbird/Browser';
 
 /**
