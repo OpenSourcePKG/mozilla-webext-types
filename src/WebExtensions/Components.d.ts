@@ -1,4 +1,5 @@
 import {nsIEnvironment} from './Base/nsIEnvironment';
+import {nsIFile} from './Base/nsIFile';
 import {nsIFilePicker} from './Base/nsIFilePicker';
 import {nsIMessenger} from './Base/nsIMessenger';
 import {nsIPrefService} from './Base/nsIPrefService';
@@ -44,6 +45,10 @@ export declare interface Components {
 
         '@mozilla.org/addons/addon-manager-startup;1': {
             getService(service: amIAddonManagerStartup): amIAddonManagerStartup;
+        };
+
+        '@mozilla.org/file/local;1': {
+            createInstance(instance: nsIFile): nsIFile;
         };
     };
 

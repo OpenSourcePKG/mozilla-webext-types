@@ -57,6 +57,13 @@ export interface nsIFilePicker {
     init(parent: mozIDOMWindowProxy, title: string, mode: number): void;
 
     /**
+     * Set the directory that the file open/save dialog initially displays
+     * Note that, if displaySpecialDirectory has been already set, this value will be ignored.
+     * @member {nsIFile}
+     */
+    displayDirectory: nsIFile;
+
+    /**
      * Get the nsIFile for the file or directory. A different file object may be returned by each invocation. Returns the file currently selected.
      * @member {nsIFile}
      */
