@@ -23,7 +23,15 @@ export interface nsIWindowMediator {
 
     /**
      * Same as getMostRecentWindow, but ignores private browsing windows.
-     * @param {string|null} aWindowType -
+     * @param {string|null} aWindowType
+     * @returns {mozIDOMWindowProxy}
      */
     getMostRecentNonPBWindow(aWindowType: string|null): mozIDOMWindowProxy;
+
+    /**
+     * Return the outer window with the given ID, if any.  Can return null.
+     * @param {number} aOuterWindowID
+     * @returns {mozIDOMWindowProxy|null}
+     */
+    getOuterWindowWithId(aOuterWindowID: number): mozIDOMWindowProxy|null;
 }

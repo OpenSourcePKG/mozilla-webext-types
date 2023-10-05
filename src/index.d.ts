@@ -73,3 +73,5 @@ export {ExtensionCommon} from './WebExtensions/ExtensionCommon';
 export {Components} from './WebExtensions/Components';
 export {Services} from './WebExtensions/Services';
 export {MailServices} from './WebExtensions/MailServices';
+export {ChromeUtils} from './WebExtensions/ChromeUtils';
+export {PathUtils} from './WebExtensions/Chrome/PathUtils';
