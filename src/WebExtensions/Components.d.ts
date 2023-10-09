@@ -1,5 +1,6 @@
 import {nsIEnvironment} from './Base/nsIEnvironment';
 import {nsIFile} from './Base/nsIFile';
+import {nsIFileOutputStream} from './Base/nsIFileOutputStream';
 import {nsIFilePicker} from './Base/nsIFilePicker';
 import {nsIMessenger} from './Base/nsIMessenger';
 import {nsIPrefService} from './Base/nsIPrefService';
@@ -49,6 +50,10 @@ export declare interface Components {
 
         '@mozilla.org/file/local;1': {
             createInstance(instance: nsIFile): nsIFile;
+        };
+
+        '@mozilla.org/network/file-output-stream;1': {
+            createInstance(instance: nsIFileOutputStream): nsIFileOutputStream;
         };
     };
 

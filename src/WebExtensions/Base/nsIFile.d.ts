@@ -29,6 +29,30 @@ import {nsISupports} from './nsISupports';
 export interface nsIFile extends nsISupports {
 
     /**
+     * NORMAL_FILE_TYPE - A normal file.
+     */
+    NORMAL_FILE_TYPE: 0;
+
+    /**
+     * DIRECTORY_TYPE - A directory/folder.
+     */
+    DIRECTORY_TYPE: 1;
+
+    /**
+     * This function is used for constructing a descendent of the current nsIFile.
+     * @param {string} node - A string which is intended to be a child node of the nsIFile.
+     * For security reasons, this cannot contain.
+     * And cannot start with a directory separator.
+     * For the |appendNative| method, the node must be in the native filesystem charset.
+     */
+    append(node: string): void;
+
+    /**
+     * Normalize the pathName (e.g. Removing .. And . Components on Unix).
+     */
+    normalize(): void;
+
+    /**
      * Is a path.
      * @member {boolean}
      */

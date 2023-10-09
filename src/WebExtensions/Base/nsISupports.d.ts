@@ -12,4 +12,11 @@ export declare interface nsISupports extends Record<string, unknown> {
      * @returns {Interfaces}
      */
     QueryInterface<I extends Interfaces[keyof Interfaces]>(aIID: I): I;
+
+    /**
+     * Is a object equal to.
+     * @param {nsISupports} obj
+     * @returns {boolean}
+     */
+    equals(obj: nsISupports): boolean;
 }

@@ -1,11 +1,12 @@
 import {nsIFile} from './nsIFile';
 import {mozIDOMWindowProxy} from './mozIDOMWindowProxy';
 import {nsIFilePickerShownCallback} from './nsIFilePickerShownCallback';
+import {nsISupports} from './nsISupports';
 
 /**
  * @see https://searchfox.org/mozilla-central/source/widget/nsIFilePicker.idl
  */
-export interface nsIFilePicker {
+export interface nsIFilePicker extends nsISupports {
 
     // Load a file or directory
     modeOpen: 0;
@@ -20,7 +21,7 @@ export interface nsIFilePicker {
     returnOK: 0;
     // User hit cancel, ignore selection
     returnCancel: 1;
-    // User acknowledged file already exists so ok to replace, process selection
+    // User-acknowledged file already exists so ok to replace, process selection
     returnReplace: 2;
 
     // *.*

@@ -1,15 +1,21 @@
 import {nsIMsgFolder} from './nsIMsgFolder';
+import {nsISupports} from './nsISupports';
 
 /**
  * nsIMsgDBHdr
  * @see https://searchfox.org/comm-central/source/mailnews/base/public/nsIMsgHdr.idl
  */
-export interface nsIMsgDBHdr {
+export interface nsIMsgDBHdr extends nsISupports {
 
     /**
      * @member {number}
      */
     flags: number;
+
+    /**
+     * @member {number}
+     */
+    readonly dateInSeconds: number;
 
     /**
      * @member {nsIMsgFolder}
