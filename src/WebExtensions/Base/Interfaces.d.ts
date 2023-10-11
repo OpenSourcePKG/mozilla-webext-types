@@ -9,6 +9,8 @@ import {nsIScriptableInputStream} from './nsIScriptableInputStream';
 import {nsIStreamListener} from './nsIStreamListener';
 import {nsISupports} from './nsISupports';
 import {nsMsgFolderFlags} from './nsMsgFolderFlags';
+import {nsMsgMessageFlags} from './nsMsgMessageFlags';
+import {nsMsgPriority} from './nsMsgPriority';
 
 export type Interfaces = {
 
@@ -23,4 +25,6 @@ export type Interfaces = {
     nsIStreamListener: nsIStreamListener;
     nsIScriptableInputStream: nsIScriptableInputStream;
     nsIMessenger: nsIMessenger;
+    nsMsgMessageFlags: nsMsgMessageFlags;
+    nsMsgPriority: nsMsgPriority;
 };

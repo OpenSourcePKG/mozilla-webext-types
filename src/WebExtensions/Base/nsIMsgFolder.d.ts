@@ -41,6 +41,12 @@ export interface nsIMsgFolder extends nsISupports {
     getFlag(flagName: nsMsgFolderFlags): boolean;
 
     /**
+     * Direct access to the set/get all the flags at once.
+     * @member {number}
+     */
+    flags: number;
+
+    /**
      * @param {nsIMsgDBHdr} msgHdr
      */
     getUriForMsg(msgHdr: nsIMsgDBHdr): string;
