@@ -3,6 +3,9 @@ import {nsIFile} from './nsIFile';
 import {nsIFileOutputStream} from './nsIFileOutputStream';
 import {nsIFilePicker} from './nsIFilePicker';
 import {nsIMessenger} from './nsIMessenger';
+import {nsIMsgCopyService} from './nsIMsgCopyService';
+import {nsIMsgCopyServiceListener} from './nsIMsgCopyServiceListener';
+import {nsIMsgEnumerator} from './nsIMsgEnumerator';
 import {nsIMsgMessageService} from './nsIMsgMessageService';
 import {nsIPrefService} from './nsIPrefService';
 import {nsIScriptableInputStream} from './nsIScriptableInputStream';
@@ -27,4 +30,7 @@ export type Interfaces = {
     nsIMessenger: nsIMessenger;
     nsMsgMessageFlags: nsMsgMessageFlags;
     nsMsgPriority: nsMsgPriority;
+    nsIMsgEnumerator: nsIMsgEnumerator;
+    nsIMsgCopyService: nsIMsgCopyService;
+    nsIMsgCopyServiceListener: nsIMsgCopyServiceListener;
 };

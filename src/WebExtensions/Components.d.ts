@@ -41,7 +41,7 @@ export declare interface Components {
         };
 
         '@mozilla.org/messenger;1': {
-            createInstance(instance: nsIMessenger): nsIMessenger;
+            createInstance(instance?: nsIMessenger): nsIMessenger;
         };
 
         '@mozilla.org/addons/addon-manager-startup;1': {

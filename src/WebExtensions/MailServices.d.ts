@@ -1,3 +1,4 @@
+import {nsIMsgCopyService} from './Base/nsIMsgCopyService';
 import {nsIMsgMessageService} from './Base/nsIMsgMessageService';
 
 /**
@@ -12,4 +13,11 @@ export declare interface MailServices {
      * @returns {nsIMsgMessageService}
      */
     messageServiceFromURI(uri: string): nsIMsgMessageService;
+
+    /**
+     * @member {nsIMsgCopyService}
+     */
+    copy: nsIMsgCopyService;
+
+    // TODO
 }
