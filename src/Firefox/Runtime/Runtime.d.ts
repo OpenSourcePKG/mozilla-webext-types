@@ -1,4 +1,5 @@
 import {TEvent} from '../../Thunderbird/TEvent';
+import {ManifestJson} from './ManifestJson';
 import {MessageSender} from './MessageSender';
 import {RuntimeSendMessageOptions} from './RuntimeSendMessageOptions';
 
@@ -21,6 +22,12 @@ export interface Runtime {
      * @returns {Window}
      */
     getBackgroundPage(): Promise<Window|null>;
+
+    /**
+     * Gets the complete manifest.json file, serialized as an object.
+     * @returns {ManifestJson}
+     */
+    getManifest<T extends ManifestJson>(): T;
 
     /**
      * Sends a single message to event listeners within your extension or a different extension.

@@ -9,6 +9,7 @@ export {RunAt} from './Firefox/ExtensionTypes/RunAt';
 export {InjectDetails} from './Firefox/ExtensionTypes/InjectDetails';
 export {LanguageCode} from './Firefox/I18n/LanguageCode';
 export {I18n} from './Firefox/I18n/I18n';
+export {ManifestJson} from './Firefox/Runtime/ManifestJson';
 export {Browser as FirefoxBrowser} from './Firefox/Browser';
 
 /**
