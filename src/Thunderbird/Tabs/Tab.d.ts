@@ -31,11 +31,11 @@ export interface Tab {
     selected?: boolean;
 
     /**
-     * cookieStoreId
      * The CookieStore id used by the tab. Either a custom id created using the contextualIdentities API,
      * or a built-in one: firefox-default, firefox-container-1, firefox-container-2, firefox-container-3,
      * firefox-container-4, firefox-container-5. Note: The naming pattern was deliberately not changed for
      * Thunderbird, but kept for compatibility reasons.
+     * @member {string}
      */
     cookieStoreId?: string;
 

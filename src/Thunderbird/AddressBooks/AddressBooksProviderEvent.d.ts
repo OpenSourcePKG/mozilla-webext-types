@@ -1,48 +1,43 @@
 /**
- * AddressBooksProviderEvent
- *
  * @see https://webextension-api.thunderbird.net/en/115/addressBooks.provider.html
  */
 export interface AddressBooksProviderEvent<EventListener> {
 
     /**
-     * addListener
-     * Parameters for onSearchRequest.addListener(listener, parameters)
-     *
-     * @param listener A function that will be called when this event occurs.
-     * @param parameters Descriptions for the address book created by registering this listener.
+     * Parameters for onSearchRequest.addListener(listener, parameters).
+     * @param {EventListener} listener - A function that will be called when this event occurs.
+     * @param {object} parameters - Descriptions for the address book created by registering this listener.
+     * @returns {any}
      */
     addListener(
 
         /**
-         * listener
          * A function that will be called when this event occurs.
          */
         listener: EventListener,
 
         /**
-         * parameters
          * Descriptions for the address book created by registering this listener.
          */
         parameters: {
 
             /**
-             * addressBookName
              * The name of the created address book.
+             * @member {string}
              */
             addressBookName?: string;
 
             /**
-             * id
              * The unique ID of the created address book. If several listeners have been added,
              * the id allows to identify which address book initiated the search request.
              * If not provided, a unique ID will be generated for you.
+             * @member {string}
              */
             id?: string;
 
             /**
-             * isSecure
              * Whether the address book search queries are using encrypted protocols like HTTPS.
+             * @member {string}
              */
             isSecure?: string;
         }): any;

@@ -10,67 +10,60 @@ import {WindowType} from './WindowType';
  * The tabs API supports creating, modifying and interacting with tabs in Thunderbird windows.
  *
  * Permissions:
- * 'activeTab'
- * 'tabs' Access browser tabs
- * 'tabHide' Hide and show browser tabs
- *
+ * - 'activeTab'
+ * - 'tabs' Access browser tabs
+ * - 'tabHide' Hide and show browser tabs.
  * @see https://webextension-api.thunderbird.net/en/115/tabs.html
  */
 export interface Tabs {
 
     /**
-     * get
      * Retrieves details about the specified tab.
-     *
-     * @param tabId
+     * @param {number} tabId
      */
     get(tabId: number): Promise<Tab>;
 
     /**
-     * getCurrent
      * Gets the tab that this script call is being made from. May be undefined if called from a non-tab context
      * (for example: a background page or popup view).
+     * @returns {Tab}
      */
     getCurrent(): Promise<Tab>;
 
     /**
-     * connect
      * [Added in TB 82, backported to TB 78.4.0]
      * Connects to the content script(s) in the specified tab. The runtime.onConnect event is fired in each content
      * script running in the specified tab for the current extension. For more details, see Content Script Messaging.
-     *
-     * @param tabId
-     * @param connectInfo
-     * @return A port that can be used to communicate with the content scripts running in the specified tab.
+     * @param {number} tabId
+     * @param {object} connectInfo
+     * @returns {Port} A port that can be used to communicate with the content scripts running in the specified tab.
      */
     connect(
         tabId: number,
         connectInfo: {
 
             /**
-             * frameId
              * Open a port to a specific frame identified by frameId instead of all frames in the tab.
+             * @member {number}
              */
             frameId?: number;
 
             /**
-             * name
              * Will be passed into onConnect for content scripts that are listening for the connection event.
+             * @member {string}
              */
             name?: string;
         }): Promise<Port>;
 
     /**
-     * sendMessage
      * [Added in TB 82, backported to TB 78.4.0]
      * Sends a single message to the content script(s) in the specified tab, with an optional callback to run when a
      * response is sent back. The runtime.onMessage event is fired in each content script running in the
      * specified tab for the current extension.
-     *
-     * @param tabId
-     * @param message
-     * @param options
-     * @return The JSON response object sent by the handler of the message. If an error occurs while connecting to the
+     * @param {number} tabId
+     * @param {any} message
+     * @param {object} options
+     * @returns {any} The JSON response object sent by the handler of the message. If an error occurs while connecting to the
      * specified tab, the callback will be called with no arguments and runtime.lastError will be set to the error message.
      */
     sendMessage(
@@ -79,190 +72,184 @@ export interface Tabs {
         options?: {
 
             /**
-             * frameId
              * Send a message to a specific frame identified by frameId instead of all frames in the tab.
+             * @member {number}
              */
             frameId?: number;
         }): Promise<any>;
 
     /**
-     * create
      * Creates a new content tab. Use the messageDisplay to open messages. Only supported in normal windows.
      * Same-site links in the loaded page are opened within Thunderbird, all other links are opened in the user’s
      * default browser. To override this behavior, add-ons have to register a content script , capture click events
      * and handle them manually.
-     *
-     * @param createProperties
-     * @return Details about the created tab. Will contain the ID of the new tab.
+     * @param {object} createProperties
+     * @returns {Tab} Details about the created tab. Will contain the ID of the new tab.
      */
     create(
 
         /**
-         * createProperties
          * Properties for the new tab. Defaults to an empty tab, if no url is provided.
          */
         createProperties: {
 
             /**
-             * active
              * Whether the tab should become the active tab in the window. Does not affect whether the window is
              * focused (see update(windowId, updateInfo)). Defaults to true.
+             * @member {boolean}
              */
             active?: boolean;
 
             /**
-             * cookieStoreId
              * The CookieStore id the new tab should use. Either a custom id created using the
              * contextualIdentities API, or a built-in one: firefox-default, firefox-container-1,
              * firefox-container-2, firefox-container-3, firefox-container-4, firefox-container-5. Note:
              * The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons.
+             * @member {string}
              */
             cookieStoreId?: string;
 
             /**
-             * index
              * The position the tab should take in the window. The provided value will be clamped to between zero
              * and the number of tabs in the window.
+             * @member {number}
              */
             index?: number;
 
             /**
-             * selected
              * Unsupported!
-             * Whether the tab should become the selected tab in the window. Defaults to true
+             * Whether the tab should become the selected tab in the window. Defaults to true.
+             * @member {boolean}
              */
             selected?: boolean;
 
             /**
-             * url
              * The URL to navigate the tab to initially. Fully-qualified URLs must include a scheme
-             * (i.e. http://www.google.com, not www.google.com). Relative URLs will be relative to the current page
+             * (i.e. Http://www.google.com, not www.google.com). Relative URLs will be relative to the current page
              * within the extension.
+             * @member {string}
              */
             url?: string;
 
             /**
-             * windowId
              * The window to create the new tab in. Defaults to the current window.
+             * @member {number}
              */
             windowId?: number;
         }
     ): Promise<Tab>;
 
     /**
-     * duplicate
      * Duplicates a tab.
-     *
-     * @param tabId The ID of the tab which is to be duplicated.
-     * @return Details about the duplicated tab. The Tab object doesn’t contain url, title and favIconUrl if the tabs permission has not been requested.
+     * @param {number} tabId - The ID of the tab which is to be duplicated.
+     * @returns {Tab} Details about the duplicated tab. The Tab object doesn’t contain url, title and favIconUrl
+     * if the tabs permission has not been requested.
      */
     duplicate(tabId: number): Promise<Tab>;
 
     /**
-     * query
      * Gets all tabs that have the specified properties, or all tabs if no properties are specified.
-     *
-     * @param queryInfo
+     * @param {object} queryInfo
+     * @returns {Tab[]}
      */
     query(
         queryInfo?: {
 
             /**
-             * active
              * Whether the tabs are active in their windows.
+             * @member {boolean}
              */
             active?: boolean;
 
             /**
-             * cookieStoreId
              * The CookieStore id(s) used by the tabs. Either custom ids created using the contextualIdentities API,
              * or built-in ones: firefox-default, firefox-container-1, firefox-container-2, firefox-container-3,
              * firefox-container-4, firefox-container-5. Note: The naming pattern was deliberately not changed for
              * Thunderbird, but kept for compatibility reasons.
+             * @member {string|string[]}
              */
             cookieStoreId?: string|string[];
 
             /**
-             * currentWindow
              * Whether the tabs are in the current window.
+             * @member {boolean}
              */
             currentWindow?: boolean;
 
             /**
-             * highlighted
              * Whether the tabs are highlighted. Works as an alias of active.
+             * @member {boolean}
              */
             highlighted?: boolean;
 
             /**
-             * index
              * The position of the tabs within their windows.
+             * @member {number}
              */
             index?: number;
 
             /**
-             * lastFocusedWindow
              * Whether the tabs are in the last focused window.
+             * @member {boolean}
              */
             lastFocusedWindow?: boolean;
 
             /**
-             * mailTab
              * Whether the tab is a Thunderbird 3-pane tab.
+             * @member {boolean}
              */
             mailTab?: boolean;
 
             /**
-             * spaceId
              * The id of the space the tabs should belong to.
+             * @member {number}
              */
             spaceId?: number;
 
             /**
-             * status
              * Whether the tabs have completed loading.
+             * @member {TabStatus}
              */
             status?: TabStatus;
 
             /**
-             * title
              * Match page titles against a pattern.
+             * @member {string}
              */
             title?: string;
 
             /**
-             * type
              * [Added in TB 91]
              * Match tabs against the given Tab.type (see Tab). Ignored if queryInfo.mailTab is specified.
+             * @member {string}
              */
             type?: string;
 
             /**
-             * url
              * Match tabs against one or more URL Patterns. Note that fragment identifiers are not matched.
+             * @member {string|string[]}
              */
             url?: string|string[];
 
             /**
-             * windowId
              * The ID of the parent window, or WINDOW_ID_CURRENT for the current window.
+             * @member {number}
              */
             windowId?: number;
 
             /**
-             * windowType
              * The type of window the tabs are in.
+             * @member {WindowType}
              */
             windowType?: WindowType;
         }
     ): Promise<Tab[]>;
 
     /**
-     * update
      * Modifies the properties of a tab. Properties that are not specified in updateProperties are not modified.
-     *
-     * @param tabId
-     * @param updateProperties
+     * @param {number} tabId
+     * @param {object} updateProperties
+     * @returns {Tab}
      */
     update(
 
