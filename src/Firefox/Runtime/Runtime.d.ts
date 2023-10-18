@@ -1,6 +1,7 @@
 import {TEvent} from '../../Thunderbird/TEvent';
 import {ManifestJson} from './ManifestJson';
 import {MessageSender} from './MessageSender';
+import {PlatformInfo} from './PlatformInfo';
 import {RuntimeSendMessageOptions} from './RuntimeSendMessageOptions';
 
 /**
@@ -48,12 +49,19 @@ export interface Runtime {
     sendMessage(extensionId: string, message: any, options?: RuntimeSendMessageOptions): Promise<any>;
 
     /**
+     * Returns information about the current platform. This can only be called in the background script context.
+     * @returns {PlatformInfo} A Promise that will be fulfilled with a runtime.PlatformInfo value
+     * representing the current platform.
+     */
+    getPlatformInfo(): Promise<PlatformInfo>;
+
+    /**
      * Use this event to listen for messages from another part of your extension.
      * Some example use cases are.:
      * in a content script, to listen for messages from a background script.
-     * in a background script, to listen for messages from a content script.
-     * in an option page or popup script, to listen for messages from a background script.
-     * in a background script, to listen for messages from an option page or popup script.
+     * In a background script, to listen for messages from a content script.
+     * In an option page or popup script, to listen for messages from a background script.
+     * In a background script, to listen for messages from an option page or popup script.
      * To send a message that is received by the onMessage() listener, use runtime.sendMessage() or
      * (to send a message to a content script) tabs.sendMessage().
      */

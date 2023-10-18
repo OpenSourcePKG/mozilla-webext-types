@@ -1,4 +1,5 @@
 import {DownloadItem} from './DownloadItem';
+import {DownloadQuery} from './DownloadQuery';
 import {FilenameConflictAction} from './FilenameConflictAction';
 
 /**
@@ -24,7 +25,7 @@ export declare interface Downloads {
      * This is an asynchronous function that returns a Promise.
      * @param {object} options - An object specifying what file you wish to download, and any other preferences you
      * wish to set concerning the download.
-     * @returns {DownloadItem} A Promise. If the download started successfully, the promise will be fulfilled with
+     * @returns {number} A Promise. If the download started successfully, the promise will be fulfilled with
      * the id of the new downloads.DownloadItem. Otherwise, the promise will be rejected with an error message taken
      * from downloads.InterruptReason.
      */
@@ -109,5 +110,14 @@ export declare interface Downloads {
          * @member {string}
          */
         url?: string;
-    }): Promise<DownloadItem>;
+    }): Promise<number>;
+
+    /**
+     * The search() function of the downloads API queries the DownloadItems available in the browser's
+     * downloads manager, and returns those that match the specified search criteria.
+     * @param {DownloadQuery} query
+     * @returns {DownloadItem[]}
+     */
+    search(query: DownloadQuery): Promise<DownloadItem[]>;
+
 }

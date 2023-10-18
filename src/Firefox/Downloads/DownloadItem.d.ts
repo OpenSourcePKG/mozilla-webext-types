@@ -134,7 +134,13 @@ export declare interface DownloadItem {
      * defined in the downloads.State type.
      * @member {string}
      */
-    state: string;
+    state:
+        // The browser is currently receiving download data from the server.
+        'in_progress' |
+        // An error broke the connection with the server.
+        'interrupted' |
+        // The download completed successfully.
+        'complete';
 
     /**
      * A number indicating the total number of bytes in the file being downloaded. This does not take file compression
