@@ -1,6 +1,6 @@
 {
   "name": "mozilla-webext-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Types description of Firefox and Thunderbird WebExtension.",
   "scripts": {},
   "repository": {

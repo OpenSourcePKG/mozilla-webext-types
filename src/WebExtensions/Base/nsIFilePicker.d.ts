@@ -1,3 +1,4 @@
+import {BrowsingContext} from './BrowsingContext';
 import {nsIFile} from './nsIFile';
 import {mozIDOMWindowProxy} from './mozIDOMWindowProxy';
 import {nsIFilePickerShownCallback} from './nsIFilePickerShownCallback';
@@ -85,13 +86,13 @@ export interface nsIFilePicker extends nsISupports {
     /**
      * Initialize the file picker widget.
      * The file picker is not valid until this method is called.
-     * @param {mozIDOMWindowProxy} parent - 'mozIDOMWindow' parent.
+     * @param {BrowsingContext} parent - 'BrowsingContext' parent.
      * This dialog will be dependent on this parent.
      * Parent must be non-null.
      * @param {string} title - The title for the file widget.
      * @param {number} mode - 'load', 'save', or 'get' folder.
      */
-    init(parent: mozIDOMWindowProxy, title: string, mode: number): void;
+    init(browsingContext: BrowsingContext, title: string, mode: number): void;
 
     /**
      * The filter which is currently selected in the File Picker dialog.

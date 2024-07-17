@@ -48,6 +48,7 @@ export {Browser as ThunderbirdBrowser} from './Thunderbird/Browser';
  * WebExtensions objects.
  */
 export {Interfaces} from './WebExtensions/Base/Interfaces';
+export {BrowsingContext} from './WebExtensions/Base/BrowsingContext';
 export {nsIURI} from './WebExtensions/Base/nsIURI';
 export {nsIJSRAIIHelper} from './WebExtensions/Base/nsIJSRAIIHelper';
 export {nsIMsgDBHdr} from './WebExtensions/Base/nsIMsgDBHdr';
@@ -83,5 +84,5 @@ export {Components} from './WebExtensions/Components';
 export {Services} from './WebExtensions/Services';
 export {MailServices} from './WebExtensions/MailServices';
 export {MailUtils} from './WebExtensions/MailUtils';
-export {ChromeUtils} from './WebExtensions/ChromeUtils';
+export {ChromeUtilsModules, ChromeUtils} from './WebExtensions/ChromeUtils';
 export {PathUtils} from './WebExtensions/Chrome/PathUtils';
