@@ -6,6 +6,7 @@ import {nsIMessenger} from './Base/nsIMessenger';
 import {nsIPrefService} from './Base/nsIPrefService';
 import {nsIJSCID} from './Base/nsIJSCID';
 import {nsIScriptableInputStream} from './Base/nsIScriptableInputStream';
+import {nsIXMLHttpRequest} from './Base/nsIXMLHttpRequest';
 import {ComponentsInterfaces} from './Components/ComponentsInterfaces';
 import {ComponentsResults} from './Components/ComponentsResults';
 import {ComponentsUtils} from './Components/ComponentsUtils';
@@ -52,6 +53,10 @@ export declare interface Components {
 
         '@mozilla.org/network/file-output-stream;1': {
             createInstance(instance: nsIFileOutputStream): nsIFileOutputStream;
+        };
+
+        '@mozilla.org/xmlextras/xmlhttprequest;1': {
+            createInstance(instance: nsIXMLHttpRequest): nsIXMLHttpRequest;
         };
     };
 

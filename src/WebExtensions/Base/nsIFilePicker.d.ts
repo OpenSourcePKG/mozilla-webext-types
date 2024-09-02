@@ -70,7 +70,7 @@ export interface nsIFilePicker extends nsISupports {
     filterVideo: 0x200;
 
     /**
-     * *.pdf;
+     * .pdf;.
      */
     filterPDF: 0x400;
 
