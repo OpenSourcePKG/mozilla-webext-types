@@ -2,6 +2,7 @@ import {Accounts} from './Accounts/Accounts';
 import {AddressBooks} from './AddressBooks/AddressBooks';
 import {BrowserAction} from './BrowserAction/BrowserAction';
 import {ComposeScripts} from './ComposeScripts/ComposeScripts';
+import {Cookies} from './Cookies/Cookies';
 import {MessageDisplay} from './MessageDisplay/MessageDisplay';
 import {MessageDisplayAction} from './MessageDisplayAction/MessageDisplayAction';
 import {Messages} from './Messages/Messages';
@@ -70,4 +71,11 @@ export interface Browser extends Super {
      * @member {Windows}
      */
     windows: Windows;
+
+    /**
+     * Use the browser.cookies API to query and modify cookies, and to be notified when they change.
+     * @member {Cookies}
+     */
+    cookies: Cookies;
+
 }

@@ -1,3 +1,4 @@
+import {EventHandler} from './EventHandler';
 import {XMLHttpRequestEventTarget} from './XMLHttpRequest/XMLHttpRequestEventTarget';
 import {XMLHttpRequestResponseType} from './XMLHttpRequest/XMLHttpRequestResponseType';
 
@@ -5,6 +6,8 @@ import {XMLHttpRequestResponseType} from './XMLHttpRequest/XMLHttpRequestRespons
  * @see https://searchfox.org/mozilla-central/source/dom/webidl/XMLHttpRequest.webidl
  */
 export declare interface nsIXMLHttpRequest extends XMLHttpRequestEventTarget {
+
+    onreadystatechange: EventHandler;
 
     // states
     UNSENT: 0;
@@ -27,7 +30,7 @@ export declare interface nsIXMLHttpRequest extends XMLHttpRequestEventTarget {
     upload: unknown;
 
     // todo |XMLHttpRequestBodyInit
-    send(body?: Document): void;
+    send(body?: Document|any): void;
 
     readonly responseURL: string;
 

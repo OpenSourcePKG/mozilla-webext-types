@@ -43,4 +43,5 @@ export interface Browser {
      * @member {Storage}
      */
     storage: Storage;
+
 }

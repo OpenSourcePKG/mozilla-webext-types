@@ -11,6 +11,7 @@ import {nsIPrefService} from './nsIPrefService';
 import {nsIScriptableInputStream} from './nsIScriptableInputStream';
 import {nsIStreamListener} from './nsIStreamListener';
 import {nsISupports} from './nsISupports';
+import {nsIXMLHttpRequest} from './nsIXMLHttpRequest';
 import {nsMsgFolderFlags} from './nsMsgFolderFlags';
 import {nsMsgMessageFlags} from './nsMsgMessageFlags';
 import {nsMsgPriority} from './nsMsgPriority';
@@ -33,4 +34,5 @@ export type Interfaces = {
     nsIMsgEnumerator: nsIMsgEnumerator;
     nsIMsgCopyService: nsIMsgCopyService;
     nsIMsgCopyServiceListener: nsIMsgCopyServiceListener;
+    nsIXMLHttpRequest: nsIXMLHttpRequest;
 };

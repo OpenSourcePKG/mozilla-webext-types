@@ -1,9 +1,21 @@
 import {mozIDOMWindowProxy} from './mozIDOMWindowProxy';
+import {nsISimpleEnumerator} from './nsISimpleEnumerator.js';
+import {nsISupports} from './nsISupports.js';
 
 /**
  * @see https://searchfox.org/mozilla-central/source/xpfe/appshell/nsIWindowMediator.idl#67
  */
-export interface nsIWindowMediator {
+export interface nsIWindowMediator extends nsISupports {
+
+    /**
+     * Return an enumerator which iterates over all windows of type aWindowType
+     * from the oldest window to the youngest.
+     * @param {string} aWindowType - The returned enumerator will enumerate only windows of this type.
+     * ("type" is the |windowtype| attribute of the XML <window> element.) If null, all windows will be enumerated.
+     * @returns An enumerator of nsIDOMWindows.  Note that windows close asynchronously in many cases, so windows
+     * returned {nsISimpleEnumerator} from this enumerator can have .closed set to true.  Caveat enumerator!
+     */
+    getEnumerator(aWindowType: string): nsISimpleEnumerator<any>;
 
     /**
      * This is a shortcut for simply fetching the first window in front to back order.
