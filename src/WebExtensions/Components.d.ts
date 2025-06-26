@@ -1,3 +1,4 @@
+import {nsIAlertsService} from './Base/nsIAlertsService.js';
 import {nsIEnvironment} from './Base/nsIEnvironment';
 import {nsIFile} from './Base/nsIFile';
 import {nsIFileOutputStream} from './Base/nsIFileOutputStream';
@@ -57,6 +58,10 @@ export declare interface Components {
 
         '@mozilla.org/xmlextras/xmlhttprequest;1': {
             createInstance(instance: nsIXMLHttpRequest): nsIXMLHttpRequest;
+        };
+
+        '@mozilla.org/alerts-service;1': {
+            getService(service: nsIAlertsService): nsIAlertsService;
         };
     };
 

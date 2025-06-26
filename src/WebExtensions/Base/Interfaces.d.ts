@@ -1,4 +1,5 @@
 import {amIAddonManagerStartup} from '../Extensions/amIAddonManagerStartup';
+import {nsIAlertsService} from './nsIAlertsService.js';
 import {nsIFile} from './nsIFile';
 import {nsIFileOutputStream} from './nsIFileOutputStream';
 import {nsIFilePicker} from './nsIFilePicker';
@@ -35,4 +36,5 @@ export type Interfaces = {
     nsIMsgCopyService: nsIMsgCopyService;
     nsIMsgCopyServiceListener: nsIMsgCopyServiceListener;
     nsIXMLHttpRequest: nsIXMLHttpRequest;
+    nsIAlertsService: nsIAlertsService;
 };

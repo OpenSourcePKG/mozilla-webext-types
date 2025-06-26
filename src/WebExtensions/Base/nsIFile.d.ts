@@ -64,6 +64,18 @@ export interface nsIFile extends nsISupports {
     readonly exists: () => boolean;
 
     /**
+     * Is direcotry.
+     * @returns {boolean}
+     */
+    readonly isDirectory: () => boolean;
+
+    /**
+     * IS file.
+     * @returns {boolean}
+     */
+    readonly isFile: () => boolean;
+
+    /**
      * This function will initialize the nsIFile object.
      * Any internal state information will be reset.
      * @param {string} filePath - A string which specifies a full file path to a location.
