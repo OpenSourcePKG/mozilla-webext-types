@@ -1,42 +1,44 @@
 import {Osfile} from './Chrome/Osfile';
+import {MailServices} from './MailServices.js';
 import {Services as TServices} from './Services';
 
 export type OsFilePath = 'resource://gre/modules/osfile.jsm';
 
 /**
- * ChromeUtils Modules
+ * ChromeUtils Modules.
  */
 export interface ChromeUtilsModules {
     Services: TServices;
     'resource://gre/modules/osfile.jsm': Osfile;
+    'resource://modules/MailServices.jsm': MailServices;
 }
 
 /**
- * ChromeUtils
+ * ChromeUtils.
  */
 export declare class ChromeUtils {
 
     /**
-     * Import target
-     * @deprecated Use new importESModule, read more https://developer.thunderbird.net/add-ons/updating/tb128#esmification
+     * Import target.
      * @param {ChromeUtilsModules|string} module
      * @returns {ChromeUtilsModules[S]}
+     * @deprecated Use new importESModule, read more https://developer.thunderbird.net/add-ons/updating/tb128#esmification.
      */
     public import: <S extends keyof ChromeUtilsModules>(module: S) => ChromeUtilsModules[S];
 
     /**
-     * import a ESModule
+     * Import a ESModule.
      * @param {ChromeUtilsModules|string} module
      * @returns {ChromeUtilsModules[S]}
      */
     public importESModule: <S extends keyof ChromeUtilsModules>(module: S) => ChromeUtilsModules[S];
 
     /**
-     * define Module Getter
-     * @deprecated Use new defineESModuleGetters, read more https://developer.thunderbird.net/add-ons/updating/tb128#esmification
+     * Define Module Getter.
      * @param {any} target
      * @param {string} variable
      * @param {string} path
+     * @deprecated Use new defineESModuleGetters, read more https://developer.thunderbird.net/add-ons/updating/tb128#esmification.
      */
     public defineModuleGetter: (target: any, variable: string, path: string) => void;
 
